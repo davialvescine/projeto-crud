@@ -5,6 +5,7 @@ const app = express();
 
 //definindo o template engine
 app.set('view engine', 'ejs') 
+app.set('views', path.join(__dirname, 'views'));
 
 //definindo os arquivos publicos
 
@@ -28,3 +29,4 @@ app.use((req, res) => {//middleware
 })
 //executando o servidor 
 const port = process.env.PORT || 8080
+app.listen(port, () => console.log(`Server is listing on port ${port}`))
